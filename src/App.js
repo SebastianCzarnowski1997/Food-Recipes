@@ -17,7 +17,7 @@ function App() {
   // Meals to prepare
   const [meals, setMeals] = useState([])
   const [search, setSearch] = useState("");
-  const [clicked, setClicked] = useState("chicken");
+  const [clicked, setClicked] = useState("banana");
   // Creating three meals per day
   const [losMeal, setlosMeal] = useState([])
   const [nutrients, setNutrients] = useState(null)
