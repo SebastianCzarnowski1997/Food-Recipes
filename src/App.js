@@ -16,8 +16,8 @@ function App() {
   const APP_ID_RECIPE_KEY = "d4dc1d171ee00f08fe99310733157e5a"
   // Meals to prepare
   const [meals, setMeals] = useState([])
-  const [search, setSearch] = useState("Banana");
-  const [clicked, setClicked] = useState("banana");
+  const [search, setSearch] = useState("Chicken");
+  const [clicked, setClicked] = useState("Chicken");
   // Creating three meals per day
   const [losMeal, setlosMeal] = useState([])
   const [nutrients, setNutrients] = useState(null)
