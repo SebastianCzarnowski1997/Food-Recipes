@@ -21,8 +21,8 @@ function App() {
   // Creating three meals per day
   const [losMeal, setlosMeal] = useState([])
   const [nutrients, setNutrients] = useState(null)
-  const [calories, setCalories] = useState("1200")
-  const [reload, setReload] = useState("1200")
+  const [calories, setCalories] = useState("1100")
+  const [reload, setReload] = useState("1100")
   // Setting images for loss meals
   const [image, setImage] = useState("")
   // Shopping list 
