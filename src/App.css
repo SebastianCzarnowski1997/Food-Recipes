@@ -1,38 +1,735 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(234, 237, 237);
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(234, 237, 237);
+
 }
 
-.App-logo {
-  height: 40vmin;
+.header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  background-color: #000000;
+  width: 100%;
+  height: 10vh;
+}
+
+
+.meals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.wrapper {
+  width: 450px;
+  padding: 30px;
+}
+
+.input {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+
+}
+
+.input input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: black;
+  color: #FFFFFF;
+}
+
+.input input:focus~label,
+.input input:valid~label {
+  transform: translateY(-25px);
+  font-size: 15px;
+}
+
+.fa-utensils {
+  position: absolute;
+  left: 20px;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+.fa-search {
+  font-size: 25px;
+  cursor: pointer;
+  color: #FFFFFF;
+
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
+}
+
+
+.input label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #FFFFFF;
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input input:focus {
+  outline: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
+  display: flex;
+  width: 30%;
+  /* background-color: aqua; */
+}
+
+.manuul {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.manuul li {
+  list-style-type: none;
+  color: black;
+  font-size: 17px;
+
+}
+
+.manuul li a {
+  text-decoration: none !important;
+  color: white;
+
+
+}
+
+.link {
+  text-decoration: none;
+}
+
+.home {
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 90%;
+  height: 100%;
+}
+
+.homeimg {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.product {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin: 10px;
+  align-items: center;
+  /* height: 60vh; */
+}
+
+.product>img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin: 15px;
+}
+
+.product ol {
+  margin: 10px;
+  font-size: 15px;
+  padding: 50px;
+}
+
+.product>h1 {
+  margin: 10px;
+}
+
+.product>p {
+  padding-bottom: 20px;
+}
+
+.productDiet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vh;
+  width: 100%;
+  font-family: 'Roboto',
+    sans-serif;
+}
+
+.threeMeals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.threeMeals ul {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.dailyNutrients {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.nutrientsContainer {
+  margin-top: 40px;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  min-height: 40vh;
+
+}
+
+.nutrientsContainer h1 {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.nutrientsContainer img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin: 15px;
+}
+
+.nutrientsContainer a {
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.headerTodo {
+  margin-top: 10vh;
+  font-size: 1.5rem;
+}
+
+
+.todo-input-second {
+  width: 5vw;
+}
+
+.headerTodo,
+.formTodo {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.formTodo input,
+.formTodo button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.formTodo button {
+  color: green;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formTodo button:hover {
+  background: green;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.todo-list {
+  min-width: 90%;
+  list-style: none;
+}
+
+
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.filter-todo {
+  padding: 1rem;
+  background-color: white;
+}
+
+
+
+
+.todo li {
+  flex: 1;
+}
+
+.quantity {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 20px;
+}
+
+
+.trash-btn,
+.complete-btn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: green;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: green;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+
+@media (max-width: 800px) {
+  body {
+    overflow-x: hidden;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #000000;
+    width: 100%;
+    height: 20vh;
   }
+
+  .meals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+  }
+
+  .wrapper {
+    /* width: 250px; */
+    width: 75%;
+    padding: 30px;
+  }
+
+  .input {
+    height: 30px;
+    width: 100%;
+    position: relative;
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+
+  }
+
+  .input input {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .input input:focus~label,
+  .input input:valid~label {
+    transform: translateY(-25px);
+    font-size: 11px;
+  }
+
+  .fa-utensils {
+    font-size: 20px;
+  }
+
+  .fa-search {
+    font-size: 20px;
+  }
+
+  .menu {
+    display: flex;
+    width: 100%;
+    height: 50%;
+  }
+
+  .manuul li {
+    font-size: 13px;
+  }
+
+  .home {
+    margin-top: 20vh;
+    width: 100%;
+  }
+
+  .homeimg {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .products {
+    width: 100%;
+  }
+
+  .product {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .product ol {
+    margin: 2px;
+    padding: 30px;
+    font-size: 14px;
+  }
+
+  .product>h1 {
+    margin: 10px;
+    font-size: 23px;
+  }
+
+  .product>p {
+    padding-bottom: 20px;
+  }
+
+  .productDiet {
+    margin-top: 23vh;
+    width: 95%;
+  }
+
+  .threeMeals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .threeMeals h1 {
+    font-size: 15px;
+  }
+
+  .threeMeals ul {
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+  }
+
+  .threeMeals ul li {
+    font-size: 13px;
+  }
+
+  .dailyNutrients {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .nutrientsContainer {
+    margin-top: 40px;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 40vh;
+    text-align: center;
+
+  }
+
+  .nutrientsContainer h1 {
+    margin: 20px;
+    font-size: 15px;
+  }
+
+  .nutrientsContainer img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin: 15px;
+  }
+
+  .nutrientsContainer a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .mainHeader {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainMeals {
+    height: 0px;
+  }
+
+  .mainMenu {
+    height: 100%;
+    width: 90%;
+  }
+
+  .headerTodo {
+    font-size: 1rem;
+  }
+
+  .formTodo {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .opacity {
+    display: none;
+  }
+
+  .chooseTodo {
+    width: 95%;
+  }
+
+  .todo-input {
+    width: 70%;
+  }
+
+  .todo-button {
+    width: 10%;
+  }
+
+  .todo-input-second {
+    width: 20%;
+  }
+
+  .selectTodo {
+    margin-top: 5px;
+  }
+
+
+  .headerTodo,
+  .formTodo {
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .formTodo input,
+  .formTodo button {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    border: none;
+    background: white;
+  }
+
+  .formTodo button {
+    color: green;
+    background: #f7fffe;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .formTodo button:hover {
+    background: green;
+    color: white;
+  }
+
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .todo-list {
+    min-width: 90%;
+    list-style: none;
+  }
+
+
+
+
+
+  .todo {
+    margin: 0.5rem;
+    background: white;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+    width: 100%;
+  }
+
+  .filter-todo {
+    padding: 1rem;
+  }
+
+
+  .todo li {
+    flex: 1;
+  }
+
+  .quantity {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 20px;
+  }
+
+
+  .trash-btn,
+  .complete-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .complete-btn {
+    background: rgb(11, 212, 162);
+  }
+
+  .todo-item {
+    padding: 0rem 0.5rem;
+  }
+
+  .fa-trash,
+  .fa-check {
+    pointer-events: none;
+  }
+
+  .fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+
+
+
 }
