@@ -37,7 +37,7 @@ const HeaderDiet = ({ calories, setCalories, reload, setReload, requestFood}) =>
                         <li><a href="">Start</a></li>
                         </Link>
                     <Link className="link" to="/createbucket">
-                        <li><a href="">Create bucket</a></li>
+                        <li><a href="">Shop list</a></li>
                     </Link>
                     <Link className="link" to="/creatediet">
                         <li><a href="">Create diet</a></li>
