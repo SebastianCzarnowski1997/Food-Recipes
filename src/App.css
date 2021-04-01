@@ -160,6 +160,7 @@ body {
   width: 45%;
   margin: 10px;
   align-items: center;
+  /* text-align: center; */
   /* height: 60vh; */
 }
 
@@ -178,6 +179,7 @@ body {
 
 .product>h1 {
   margin: 10px;
+  text-align: center;
 }
 
 .product>p {

@@ -21,8 +21,8 @@ function App() {
   // Creating three meals per day
   const [losMeal, setlosMeal] = useState([])
   const [nutrients, setNutrients] = useState(null)
-  const [calories, setCalories] = useState("1100")
-  const [reload, setReload] = useState("1100")
+  const [calories, setCalories] = useState("")
+  const [reload, setReload] = useState("1200")
   // Setting images for loss meals
   const [image, setImage] = useState("")
   // Shopping list 
@@ -61,6 +61,10 @@ function App() {
     filter()
   }, [completed, groceries])
 
+  useEffect(() => {
+        requestRecipe()
+    }, [clicked])
+
 
 
     const filter = () => {
@@ -78,10 +82,12 @@ function App() {
   
   // Request API  for recipes
 
-  const requestRecipe = async () => {
-    const response1 = await fetch(`https://api.edamam.com/search?q=${clicked}&app_id=${APP_ID_RECIPE}&app_key=${APP_ID_RECIPE_KEY}`);
-    const dataRecipe = await response1.json();
-    setMeals(dataRecipe.hits);
+  const requestRecipe = () => {
+    fetch(`https://api.edamam.com/search?q=${clicked}&app_id=${APP_ID_RECIPE}&app_key=${APP_ID_RECIPE_KEY}`)
+      .then((response) => response.json())
+      .then((dataFood) => {
+      setMeals(dataFood.hits)
+    })
   }
 
   // Request API for three meals a day

@@ -6,21 +6,19 @@ import {Link} from "react-router-dom"
 
 const Header = ({ search, setSearch, clicked, setClicked, requestRecipe }) => {
     
+   
+    
+
     const serachinput = (e) => {
         setSearch(e.target.value)
     }
 
-    
-    const btnclicked = (e) => {
+  const btnclicked = (e) => {
         e.preventDefault()
         setClicked(search)
+        console.log(search)
     }
-
-    useEffect(() => {
-        requestRecipe()
-    }, [clicked])
-
-
+   
 
     return (
         <div className="header">
